@@ -1,0 +1,200 @@
+<h1 id="software-requirements-specification-srs">Software Requirements
+Specification (SRS)</h1>
+<h2 id="thapar-auditorium-and-room-management-system-tarms">Thapar
+Auditorium and Room Management System (TARMS)</h2>
+<hr />
+<h3 id="purpose-and-scope">1. Purpose and Scope</h3>
+<p>The goal is to manage room and auditorium bookings, approvals, and
+scheduling for Thapar Institute of Engineering &amp; Technology. The
+system will serve students, faculty, and administrators. The primary
+outcome is to reduce manual booking processes and waiting time while
+improving accuracy of room allocation and scheduling.</p>
+<h3 id="stakeholders-and-user-classes">2. Stakeholders and User
+Classes</h3>
+<ul>
+<li><strong>Student</strong>: Undergraduate and graduate students who
+request room bookings for events, meetings, or activities.</li>
+<li><strong>Faculty</strong>: Teaching staff who approve/reject booking
+requests and manage room allocations.</li>
+<li><strong>System Administrator</strong>: IT staff who manage user
+accounts, system configuration, and backups.</li>
+<li><strong>Department Coordinator</strong>: Staff who oversee room
+availability and resolve conflicts.</li>
+<li><strong>Information Technology Support</strong>: Staff who maintain
+hosting, monitoring, and system updates.</li>
+</ul>
+<h3 id="system-context-high-level">3. System Context (High Level)</h3>
+<p>The system connects to the university’s student/faculty database for
+authentication, stores booking data and user profiles in MongoDB, and
+provides web-based interfaces for room management. It integrates with
+the university’s existing infrastructure and follows institutional
+policies for room allocation.</p>
+<h3 id="assumptions-dependencies-constraints">4. Assumptions,
+Dependencies, Constraints</h3>
+<ul>
+<li>The university provides unique user identifiers for students and
+faculty.</li>
+<li>Room booking requests must be approved by authorized faculty
+members.</li>
+<li>Booking data must be retained for audit purposes for three
+years.</li>
+<li>Normal usage supports up to two hundred concurrent users.</li>
+<li>System must operate during university business hours (8 AM to 8
+PM).</li>
+</ul>
+<h3 id="definitions-and-glossary">5. Definitions and Glossary</h3>
+<ul>
+<li><strong>Student</strong>: Any authenticated student permitted to
+request room bookings.</li>
+<li><strong>Faculty</strong>: Any authenticated faculty member
+authorized to approve booking requests.</li>
+<li><strong>Room</strong>: A uniquely identifiable space (classroom,
+auditorium, meeting room) available for booking.</li>
+<li><strong>Booking Request</strong>: A formal request for room
+allocation with specific date, time, and purpose.</li>
+<li><strong>Status</strong>: Current state of a booking request
+(Requested, On Hold, Approved, Rejected).</li>
+</ul>
+<h3 id="functional-requirements">6. Functional Requirements</h3>
+<p><strong>FR-1. User Authentication</strong> - When a user enters
+credentials (User ID/Username, Password, Member Type), the system shall
+authenticate and create a session within three seconds. - The system
+shall redirect students to the student dashboard and faculty to the
+faculty dashboard based on their role.</p>
+<p><strong>FR-2. Student Registration</strong> - When a new student
+registers, the system shall collect Name, User ID, Email, Mobile Number,
+Member Type, Date of Birth, and Password. - The system shall validate
+that User ID and Email are unique and create the account in the
+database.</p>
+<p><strong>FR-3. Faculty Registration</strong> - When a new faculty
+member registers, the system shall collect Faculty Name, Position,
+Username, Mobile Number, Member Type, Email, and Password. - The system
+shall validate that Username and Email are unique and create the faculty
+account.</p>
+<p><strong>FR-4. Room Availability Display</strong> - When a student
+accesses the home page, the system shall display all rooms with their
+current status (Available, Booked, On Hold) within two seconds. - The
+system shall show Room Number, Room Name, Status, and a “Book Now”
+button for available rooms.</p>
+<p><strong>FR-5. Booking Request Creation</strong> - When a student
+selects an available room and submits a booking form, the system shall
+collect event details including Room Name, Event Name, Purpose, Date,
+Time, Number of People, and Requirements (AC, Sound System). - The
+system shall create a booking request with “Requested” status and store
+it in the database.</p>
+<p><strong>FR-6. Faculty Approval Process</strong> - When a faculty
+member logs in, the system shall display all booking requests with “On
+Hold” status. - When a faculty member approves or rejects a request, the
+system shall update the request status and notify the student within
+five seconds.</p>
+<p><strong>FR-7. Booking History</strong> - When a student accesses “My
+Requests”, the system shall display all booking requests made by that
+student with their current status. - The system shall allow students to
+delete their own pending requests.</p>
+<p><strong>FR-8. Personal Information Management</strong> - When a user
+accesses personal information, the system shall display their current
+details. - When a user updates their information, the system shall
+validate and save the changes to the database.</p>
+<p><strong>FR-9. Password Management</strong> - When a user changes
+their password, the system shall verify the current password and update
+to the new password. - When a user requests password reset, the system
+shall log the request for administrative processing.</p>
+<p><strong>FR-10. Contact and Feedback</strong> - When a user submits
+contact information or feedback, the system shall store the data with
+timestamp for administrative review.</p>
+<h3 id="quality-attributes-measurable-targets">7. Quality Attributes
+(Measurable Targets)</h3>
+<p><strong>Performance</strong>: Under normal load of two hundred
+concurrent users, page response time shall be under three seconds for
+ninety-five percent of requests and under five seconds for ninety-nine
+percent of requests.</p>
+<p><strong>Availability</strong>: The service shall be available
+ninety-nine percent of the time during business hours (8 AM to 8 PM),
+excluding scheduled maintenance announced at least twenty-four hours in
+advance.</p>
+<p><strong>Security</strong>: All user sessions shall timeout after
+fifteen minutes of inactivity. Access to faculty features shall require
+explicit faculty role assignment. All booking actions shall be recorded
+with user ID, timestamp, and action details.</p>
+<p><strong>Usability</strong>: A new student shall be able to search for
+a room and submit a booking request without training, completing the
+task within five minutes during a standard usability study with at least
+ten participants.</p>
+<p><strong>Accessibility</strong>: The web interface shall support
+keyboard navigation and provide alternative text for images to meet
+basic accessibility requirements.</p>
+<p><strong>Maintainability</strong>: Database backup and restore
+procedures shall be documented and executable within thirty minutes by
+IT support staff.</p>
+<h3 id="external-interfaces">8. External Interfaces</h3>
+<p><strong>Human Interfaces</strong>: - Web interface for students and
+faculty using HTML5, CSS3, and JavaScript. - Handlebars templating
+engine for dynamic content generation.</p>
+<p><strong>System Interfaces</strong>: - MongoDB database for data
+persistence using Mongoose ODM. - Express.js web framework for HTTP
+request handling. - Express-session for session management with MongoDB
+session store.</p>
+<p><strong>Data Formats</strong>: - JSON for API responses and data
+exchange. - HTML forms for user input and data submission.</p>
+<h3 id="data-requirements">9. Data Requirements</h3>
+<p><strong>Entities</strong>: User, Faculty, Room, Booking_Form,
+Contact, Feedback, ResetPassword, SessionData.</p>
+<p><strong>Identifiers</strong>: Each entity shall have a unique MongoDB
+ObjectId. User IDs and faculty usernames shall be unique within their
+respective collections.</p>
+<p><strong>Retention</strong>: Booking records shall be retained for
+three years; user session data for fifteen minutes; contact and feedback
+data for one year.</p>
+<p><strong>Privacy</strong>: User contact details shall be visible only
+to the user themselves and system administrators. Faculty can view
+booking request details but not personal user information.</p>
+<h3 id="acceptance-criteria-and-test-ideas">10. Acceptance Criteria and
+Test Ideas</h3>
+<p><strong>Authentication</strong>: A valid student login with correct
+credentials redirects to student dashboard within three seconds; invalid
+credentials show error message.</p>
+<p><strong>Booking Request</strong>: A student can successfully submit a
+booking request for an available room; the request appears in faculty
+approval queue with “On Hold” status.</p>
+<p><strong>Faculty Approval</strong>: A faculty member can approve a
+booking request; the request status changes to “Approved” and the room
+status updates to “Booked”.</p>
+<p><strong>Session Management</strong>: User session expires after
+fifteen minutes of inactivity; user is redirected to login page when
+accessing protected routes.</p>
+<p><strong>Data Validation</strong>: System prevents duplicate User IDs
+and Email addresses during registration; form validation ensures
+required fields are completed.</p>
+<h3 id="out-of-scope">11. Out-of-Scope</h3>
+<ul>
+<li>Integration with university email system for notifications.</li>
+<li>Mobile application development.</li>
+<li>Advanced reporting and analytics dashboard.</li>
+<li>Integration with university calendar systems.</li>
+<li>Payment processing for room usage fees.</li>
+<li>Equipment inventory management.</li>
+</ul>
+<h3 id="prioritization">12. Prioritization</h3>
+<p><strong>Must-have</strong>: User authentication, room availability
+display, booking request creation, faculty approval process, basic user
+profile management.</p>
+<p><strong>Should-have</strong>: Booking history, password management,
+contact/feedback forms, session management.</p>
+<p><strong>Could-have</strong>: Email notifications, advanced search
+filters, room capacity management, conflict resolution tools.</p>
+<h3 id="traceability-slice-illustrative">13. Traceability Slice
+(Illustrative)</h3>
+<p><strong>Goal</strong>: Reduce average room booking processing time by
+seventy percent within one semester.</p>
+<ul>
+<li><strong>Linked Requirements</strong>: Booking request creation
+(FR-5), faculty approval process (FR-6), room availability display
+(FR-4).</li>
+<li><strong>Linked Tests</strong>: Booking workflow test T-B-001,
+approval process test T-A-002, performance load test T-P-003.</li>
+</ul>
+<hr />
+<p><strong>Document Version</strong>: 1.0<br />
+<strong>Last Updated</strong>: December 2024<br />
+<strong>Prepared By</strong>: System Development Team<br />
+<strong>Reviewed By</strong>: Project Stakeholders</p>

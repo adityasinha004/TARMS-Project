@@ -1,0 +1,753 @@
+UCS503- Software Engineering Lab
+  BOOK SPOT
+UCS 503 Software Engineering Project Report
+END-Semester Evaluation
+Submitted by:
+    (102117187) MUSKAN
+   (102117190) SANVI ARORA
+  (102297007) SHWETA KUMARI
+BE Second Year, CSE
+                                                            Group No: 2CS7
+                     
+                             
+                                             Submitted to: Dr ASHIMA SINGH
+                                                         
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 1 of 58
+Computer Science and Engineering Department
+   TIET, Patiala
+           April 2023
+UCS503- Software Engineering Lab
+TABLE OF CONTENTS
+S.No.        Assignment        Page No.
+1. Project Selection Phase
+1.1        Software Bid                                                                   4-5
+1.2        Project Overview                                                              6
+2. Analysis Phase
+2.1        Use Cases
+2.1.1        Use-Case Diagrams                                                         7
+2.1.2        Use Case Templates                                                         8-13
+2.2        Activity Diagram and Swimlane Diagrams                     14-17                  
+   
+2.3        Data Flow Diagrams (DFDs)
+2.3.1        DFD Level 0                                                                     18
+2.3.2        DFD Level 1                                                                      19
+2.3.2        DFD Level 2                                                                     20
+2.4        Software Requirement Specification in IEEE Format       21-33
+2.5        User Stories and Story Cards                                          34-39
+3. Design Phase ( At least two significant cases of each diagram)
+3.1        Class Diagram                                                                  40
+3.2        Sequence Diagram                                                           41-43
+3.3        Collaboration Diagram                                                 44-45
+3.4          State Chart Diagrams                                                46-47     
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 2 of 58
+4. Implementation
+   4.1        Component Diagrams                                                     48
+   4.2               Deployment Diagrams                                                         49
+   4.3         Screenshots                                                                50-56
+5. Testing
+   5.1          Test Plan
+   5.2          Test Cases                                                           58-67
+   5.3          Test Reports
+1. Project Selection Phase
+0.1 Software Bid
+ 
+                                          Software Bid/ Project Teams
+        UCS 503- Software Engineering Lab
+Group : CS7                                                                               Dated:26-01-2023
+Team Name: Mind Optimizers
+Team ID (will be assigned by Instructor): 2
+Please enter the names of your Preferred Team Members. :
+∙ You are required to form a three to four person teams’
+∙ Choose your team members wisely. You will not be allowed to change teams.
+Name Roll No Project Experience Programming
+Language used
+Signature
+Muskan 102117187 Web Development
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 3 of 58
+In 1st year I had made 2
+websites (balance of
+mind and IET society
+website)
+Not any
+programming
+language
+used(but know C
+and C++)
+Project made
+using HTML and
+CSS
+Sanvi Arora 102117190 App development:
+1.BookHub
+2.Weather forecasting
+app
+Used kotlin for
+App development
+Shweta
+Kumari
+102297007 Data Analysis (During
+2nd year of Diploma I
+have done training on
+Python with ML and
+was assigned a project
+on Student Performance
+in Exam using kaggle
+dataset)
+App Development
+(During 3rd year of
+Diploma I worked on
+group project on
+Chatting Application in
+which I contributed on
+database part)
+Python
+Machine
+Learning (basic)
+SQL
+Programming Language / Environment Experience
+List the languages you are most comfortable developing in, as a team, in your order of
+preference. Many of the projects involve Java or C/C++ programming.
+1.Web Development
+2.Python and C++
+3.SQL
+Choices of Projects:
+Please select 4 projects your team would like to work on, by order of preference: [Write at-least one paragraph for
+each choice (motivation, reason for choice, feasibility analysis, etc.)]
+Project Name Unique Selling Point
+First Choice E-BOOK STORE As usually observed the books needed by
+students are usually out of stock in library (i.e.
+ already issued by some students). The aim is
+to provide E-books to all students so that there
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 4 of 58
+is no hampering of quality education and
+students can access any book at any time.
+Second Choice PG finder in Patiala This is difficult to find PG in a location
+for new comers in Patiala. The aim is to
+provide it easier for students to find a perfect
+staying location for them according to their
+requirements along with the reviews of each
+PG.
+Third Choice Online shopping from Cos, G-Block
+Cafeteria and other shops in TIET
+Online delivery of products from within the
+campus within half an hour of order will be
+helpful for those who are in genuine need and
+don’t have the time to travel to cos (or in case
+if covid returns).
+This saves travelling time of students and
+even cost because if they purchase from any
+other website (like Amazon, Flipkart, Zomato
+etc.) then they have to pay additional delivery
+charges which is around Rs.70
+Fourth Choice Clone for Myntra With increased inclusivity(more appropriate
+size chart) example for jeans accurate thighs
+size which is not in original app.
+Additional Remarks/ Inputs
+Please tell us about any other factors that we should take into consideration (e.g., if you really would like to work
+on a project for some particularly convincing reason).
+………………………………………………………………………………………………
+We would love to be able to work on the first two projects, since we genuinely believe that it
+would help not just us but also other students in solving a few very basic but important
+problems.
+………………………………………………………………………………………………
+………………………………………………………………………………………………
+0.2 Project Overview
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 5 of 58
+The goal is to design a software for Thapar students to provide E-books to them, so that there
+is no hampering of quality education and students can access any book at any time. In this
+system a student can read and download the book for a particular subject according to his/her
+year and branch in pdf format. They will also be able to view the required books on the basis
+of author name and book name and they will also able to read and download journal and
+admin can add book, journal, user and delete book, journal, user. In this system, both student
+and admin can use the system only when they are logged in to system. They can login to
+system by entering correct email id and password. Only Admin is able to give access to
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 6 of 58
+student i.e.  only admin will give email id and password to respective student.
+1. Analysis Phase
+1.3 Use Cases
+         
+1.3.1     Use-Case
+Book Spot
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 7 of 58
+2.1.2 Use Case Templates
+1.3.1.1 Use Case Template for Use Case: Login
+1. Use Case Title Login
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 8 of 58
+1. Abbreviated Title Login
+2. Use Case id 1
+1. Actors Users/Admin
+1. Description
+By this facility a registered user or an admin can log-in to their respective accounts.
+5.1. Pre-Conditions:
+o The user should have a valid username and password.
+o The user should have an existing account.
+5.2. Task Sequence:
+        5.2.1 Login window will be shown by the system
+        5.2.2 Enter login credentials
+        5.2.3 The system will authenticate user and allow them to log-in.
+5.3. Post Conditions:
+o The user will be considered “logged-in” if the password matches.
+o Invalid credentials would be shown if wrong details are entered.
+o The user can proceed further if logged-in.
+1. Modification History: Date 22-APR-2023
+1. Author: Sanvi Arora
+Alternate flow:
+5.2.2 If the user enters an incorrect password then the system displays an error message and
+prompts the user to enter their credentials again.
+5.2.2 If the user enters an incorrect email then the system displays an error message and prompts
+the user to enter their credentials again.
+1.3.1.2 Use Case Template for Use Case: Add book
+1. Use Case Title Add Book
+1. Abbreviated Title Add Book
+1. Use Case id 2
+1. Actors Admin
+1. Description
+With this Add book facility admin can add books according to his requirement.
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 9 of 58
+5.1. Pre-Conditions:
+       The admin should be logged-in.
+5.2. Task Sequence:
+5.2.1 Add book window will be shown by the system.
+5.2.2 The admin can add a book stored in his pc.
+5.2.3 The system will add the selected book.
+5.3. Post Conditions:
+o Admin can add another book.
+o Admin can logout
+1. Modification History: Date 22-APR-2023
+1. Author:  Muskan
+Alternate Flow:
+5.2.2 if admin clicks on add book without selecting any book then error message would be
+displayed.
+1.3.1.3 Use Case Template for Use Case: Download
+1. Use Case Title Download
+1. Abbreviated Title Download
+1. Use Case id 3
+1. Actors Users
+1. Description
+With this Download facility user can download the book for offline access.
+5.1. Pre-Conditions:
+o The user should be logged-in.
+o The user’s system should have enough storage.
+5.2. Task Sequence:
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 10 of 58
+     
+o The user is required to select his/her year followed by his/her branch.
+o The user is required to then select the subject whose book is to be downloaded.
+o The user is required to select the book to be downloaded.
+o The user must click on download option after viewing the required book.
+o The book will be downloaded.
+5.3. Post Conditions:
+o User can view books.
+o User can access the book offline.
+o User can download another book.
+1. Modification History: Date 22-APR-2023
+1. Author: Shweta Kumari
+1.3.1.4 Use Case Template for Use Case: Add Journal
+1. Use Case Title Add Journal
+1. Abbreviated Title Add Journal
+1. Use Case id 4
+1. Actors Admin
+1. Description
+With this facility admin can add any journal for offline access.
+5.1. Pre-Conditions:
+o The admin should be logged-in.
+o The admin should have the journal to be added in his/her pc.
+5.2. Task Sequence:
+     
+5.2.1 Add journal window will be shown by the system.
+5.2.2 The admin is required to fill the details like journal name and author.
+5.2.3 The admin can add a journal stored in his system.
+5.2.4 The system will add the selected journal.
+5.3. Post Conditions:
+o Admin can add another journal.
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 11 of 58
+o Admin can logout
+o Admin can delete any journal.
+1. Modification History: Date 22-APR-2023
+1. Author: Sanvi Arora
+Alternate Flow:
+5.2.2 if an admin tries to add a journal without selecting a file from the system “File not
+Chosen” message is displayed
+1.3.1.5 Use Case Template for Use Case: Add User
+1. Use Case Title Add User
+1. Abbreviated Title Add User
+1. Use Case id 5
+1. Actors Admin
+1. Description
+With this facility admin can add any user who will be able to make use of the
+website.
+5.1. Pre-Conditions:
+o The admin should be logged-in.
+o The admin must click on add user functionality
+5.2. Task Sequence:
+o Add user window will be shown by the system.
+o The admin can add a user by entering his/her name, password and email.
+o The system will add the user.
+5.3. Post Conditions:
+o Admin can add another user.
+o Admin can delete a user.
+o Admin can logout.
+1. Modification History: Date 22-APR-2023
+1. Author: Shweta Kumari
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 12 of 58
+1.3.1.6 Use Case Template for Use Case: Download Journal
+1. Use Case Title Download Journal
+1. Abbreviated Title Download Journal
+1. Use Case id 6
+1. Actors Users
+1. Description
+With this facility user can read and download the journal of his respective choice for
+offline access.
+5.1. Pre-Conditions:
+o The user should be logged-in.
+o The user’s system should have enough storage.
+5.2. Task Sequence:
+     
+o The user is required to click on read journal button.
+o The user is required to select the journal to be downloaded.
+o The user must click on download option after viewing the required journal.
+o The journal will be downloaded.
+5.3. Post Conditions:
+o User can view journal.
+o User can access the downloaded journals offline.
+o User can download another journal.
+1. Modification History: Date 22-APR-2023
+1. Author: Muskan
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 13 of 58
+1.4 Activity Diagram and Swimlane Diagrams
+     2.2.1 Activity Diagram
+     User
+   
+      View book
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 14 of 58
+Admin
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 15 of 58
+1.4.2 Swimlane Diagram
+Admin
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 16 of 58
+User
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 17 of 58
+2.3        Data Flow Diagrams (DFDs)
+2.3.1        DFD Level 0
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 18 of 58
+2.3.2        DFD Level 1
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 19 of 58
+2.3.2        DFD Level 2
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 20 of 58
+2.4        Software Requirement Specification in IEEE Format
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 21 of 58
+Software Requirements Specification Document
+Version 1.0
+          The Book Spot
+TABLE OF CONTENTS
+Chapter No.                         TOPIC                                                                         PAGE NO.
+   1.                             INTRODUCTION                                                                         23
+      1.1                             PURPOSE OF THE DOCUMENT                                          23
+      1.2                             SCOPE OF THE DOCUMENT                                               23-24
+      1.3                             REFERENCES                                                                         25
+      1.4                             OVERVIEW                                                                             25
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 22 of 58
+   2.                            OVERALL DESCRIPTION                                                           25
+       2.1                             PRODUCT PERSPECTIVE                                                    25
+       2.2                             PRODUCT FUNCTIONS                                                        25-26
+       2.3                             USER CHARACTERISTICS                                                  26
+       2.4                             GENERAL CONSTRAINTS, ASSUMPTIONS                     26-27
+                                         AND DEPENDENCIES
+      2.5                              APPORTIONING OF THE REQUIREMENTS                      27
+  3.                              SPECIFIC REQUIREMENTS                                                       27
+      3.1                              EXTERNAL INTERFACE REQUIREMENTS                      27
+      3.2                              DETAILED DESCRIPTION OF FUNCTIONAL                   27-31
+                                         REQUIREMENTS
+            3.3                                PERFORMANCE REQUIREMENTS                            31        
+     3.4                                LOGICAL DATABASE REQUIREMENTS                           32
+     3.5                                QUALITY ATTRIBUTES                                                        32
+     3.6                                OTHER REQUIREMENTS                                                      32
+4.                                   CHANGE HISTORY                                                                    33
+5.                                   DOCUMENT APPROVERS                                                        34
+1.Introduction
+1.1 Purpose of this Document
+The purpose of this SRS document is to provide a detailed overview of our software
+product, its parameters and goals. This document describes the project's target audience
+and its user interface, hardware and software requirements.
+It defines how our client, team and audience see the product and its functionality.
+1.2 Scope of the Development Project
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 23 of 58
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 24 of 58
+The goal is to design a software for Thapar students to provide E-books to them, so that there
+is no hampering of quality education and students can access any book at any time. In this
+system a student can read and download the book for a particular subject according to his/her
+year and branch in pdf format. They will also be able to view the required books on the basis
+of author name and book name and they will also able to read and download journal and
+admin can add book, journal, user and delete book, journal, user. In this system, both student
+and admin can use the system only when they are logged in to system. They can login to
+system by entering correct email id and password. Only Admin is able to give access to
+student i.e.  only admin will give email id and password to respective student.
+The software would be able to perform the following operations:
+    1.  Easy access to Book :- The software would be able to allow the students of Thapar
+         University to avail the books of particular subject according to their years and branches.
+    2. Download Book :- By pressing the download button we can download the book and access
+       that book offline.
+   
+    3. Read and Download Journal :- The software would be able to allow the students to read  
+           
+        and download Journals.
+    4. Add Student :- Admin can add new student to system by entering his/her email address
+and
+        Password. Then Student’s data will be stored in user database and that student will be able
+to    
+        access the system by logging into system. During login, student has to put only that email
+        address and password which is provided by the Admin.
+    5. Add Book :- Admin can add new book and giving all the details of that book like book
+name,
+       Book Author, Publication, subject and that book will be visible to all registered students in  
+                             
+       respective book’s subject section.
+   
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 25 of 58
+    6. Add Journal :- Admin can add new journal and giving all the details of that journal like
+        Journal name, Journal Author and that journal will be visible to all registered students.
+    7. Delete User :- Admin can delete any student details from database and that student will
+        not be able to access software.
+       
+     8. Delete Book :- Admin can also delete any book from software system by going to book  
+          details section where admin can view book also.
+ 
+     8. Delete Journal :- Admin can also delete any journal from software system by going to
+        Journal details section where admin can view journal also.
+   
+         
+     
+   
+1.3 References
+1.4 Overview
+The remaining sections of this document provide a general description, including characteristics
+of the users of this project, the product's hardware, and the functional and data requirements of
+the product. General description of the project is discussed in section 2 of this document.
+Section 2 gives the functional requirements, data requirements and constraints and assumptions
+made while designing the multi-utility system. It also gives the user viewpoint of product use.
+Section 3 gives the specific requirements of the product. Section 3.0 also discusses the external
+interface
+requirements and gives detailed description of functional requirements.
+2. Overall Description
+0.1 Product Perspective
+Book Spot is a replacement for the ordinary library management systems which is
+dependent on paper work for recording book and user information.
+The software will run as a store of books available for the student in an e-book form.
+The product does require use of a pointing device to avail the buttons and keyboard to
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 26 of 58
+enter details like login, book details etc. As stated by the customer, there are no
+hardware or software requirements beyond these. The website as such must work
+correctly in both Internet Explorer and Mozilla Firefox.
+2.2 Product Functions
+The product should be able to perform the following operations:
+1. Account Login: It must be able to authenticate the user by their login details.
+2. View and Download: The software must provide the facility of online reading as
+well as offline access by letting the user to download the book and journal.
+3. It must be able to support organization of books in different categories (such as
+categorized by year, branch and subject section etc.)
+4. Add Student :- It must be able to add new student to system by admin by entering
+his/her email address and Password and student’s data should be stored in user database
+and that student should be able to access the system.
+5. Add Book :- It must be able to add new book to system by admin and that book should
+be visible to all registered students in respective book’s subject section.
+6. Add Journal :- It must be able to add new journal to system by admin and that journal
+should  
+be visible to all registered students.
+7. Delete User :- It must be able to delete user from system by admin and that user after
+removing from system should not be able to access the system.
+    8. Delete Book :- It must be able to delete book from software system by admin.
+    9.   Delete Journal :- It must be able to delete journal from software system by admin.
+0.3 User Characteristics
+The goal is to design software to upgrade the reading experience and ensure the availability of
+books whenever required.  Users of the software must possess a minimal educational level
+which conforms to Thapar students/faculty. These user types are listed below as follows:
+0.3.1  Student
+0.3.2  Admin
+0.4 General Constraints, Assumptions and Dependencies
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 27 of 58
+The following list presents the constraints, assumptions, dependencies or guidelines that
+are imposed upon our software “Book Spot”.
+●  The software must conform to Thapar Institute of Engineering and
+Technology disclaimer policy.
+● Due to the small form factor, only limited number of books are made
+available currently.
+● There are memory requirements in case of download of books.
+● The product will have an interface that is simple enough for all types of
+users to understand.
+● Response time for loading the software should be no longer than ten
+seconds.
+● A general knowledge of basic computer skills is required to use the product.
+● Since the “Book Spot” is only accessible through the internet, it is assumed
+that the end user has a connection to the internet. It is also assumed that the
+user has a web browser able to display the website.
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 28 of 58
+0.5 Apportioning of requirements
+There are no requirements that may be delayed until future versions of the system.
+3.Specific Requirements
+0.1 External Interface Requirements
+The following list presents the external interface requirements:
+● The product requires use of pointing device and keyboard.
+● The product does require an internet connection.
+● The Book and Journal that admin wishes to upload, it should be available in
+admin pc.
+● There are no special hardware interface requirements.
+● There are no special software interface requirements.
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 29 of 58
+● The product does not require usage of sound or animation.
+● Sound is not an essential feature but it can be considered for future variants
+of the system wherein the user will be provided an audiobook.
+0.2 Detailed Description of Functional Requirements
+Table 3 shows a template that we’ll be using to describe functional requirements for two
+types of users: student, admin/faculty as one can easily deduce the functional
+requirements for other user types with this template.
+Table 3: Template for describing functional requirements
+Purpose A description of the functional requirements and its reasons
+  Inputs What are the inputs; in what form will they arrive; from what sources can
+the inputs come; what are the legal domains of each input.
+Processing Describes the outcome rather than the implementation; includes any
+validity checks on the data, exact timing of operation (if needed), how
+to handle unexpected or abnormal situations
+Outputs The form, shape, destination and volume of output; output timing;
+range of parameters in the output; unit of measure of the output;
+process by which output is stored or destroyed; process for handling
+error message produced as output.
+0.2.1 Functional Requirements for Login Screen
+Table 4 gives the functional requirements for Login Screen.
+Table 4: Functional Requirements for Login Screen
+Purpose The system shall allow user to log-in to their account.
+Inputs The system shall require the email id and password from the user.
+Processing The system will verify the email id and password.
+Outputs The user will be considered “logged-in” if the email id and password
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 30 of 58
+match otherwise not existing will be displayed.
+    3.2.2 Functional Requirements for View Book option
+Table 5 gives the functional requirements for View Book option.
+    Table 5: Functional Requirements for View Book option
+Purpose The system shall allow a student to view books by title, author, subject and
+they are also able to download the book.
+Inputs A student is required to select year then branch and then subject of that
+book.
+Processing The menu responds to selections by displaying a page containing the
+pre-defined text requested information.
+Outputs Available book will be displayed.
+  3.2.3 Functional Requirements to Add User
+Table 6 gives the functional requirements for Add User option.
+Table 6: Functional Requirements for Add User option
+Purpose The system shall allow the admin to add users by entering their name,
+password and email.
+Inputs Admin is required to select add user button after logging into the system in
+order to add a user to existing records.
+Processing The menu responds to selection by displaying a page containing the
+pre-defined text requested information. The user is added once information
+is filled.
+Outputs User would be added to database and would be able to utilize the
+functionalities of the website.
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 31 of 58
+3.2.4 Functional requirements to Add book
+Table 7 gives the functional requirements for Add book option.
+Table 7: Functional Requirements for Add book option
+Purpose The system shall allow the admin to add book by entering its name, author,
+details, publication and its file.
+Inputs Admin is required to select add book button after logging into the system in
+order to add a book to existing records.
+Processing The menu responds to selection by displaying a page containing the
+pre-defined text requested information.
+Outputs book would be added to database and could even be seen by user
+3.2.5 Functional requirements to Add Journal
+Table 8 gives the functional requirements for Add Journal option.
+Table 8: Functional Requirements for Add Journal option
+Purpose The system shall allow the admin to add journal by entering its name,
+author and its file.
+Inputs Admin is required to select add journal button after logging into the system
+in order to add a journal to existing records.
+Processing The menu responds to selection by displaying a page containing the
+pre-defined text requested information.
+Outputs journal would be added to database and could even be seen by user
+3.2.6 Functional requirements to Delete Book
+Table 9 gives the functional requirements for delete book option.
+Table 9: Functional Requirements for Delete Book option
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 32 of 58
+Purpose The system shall allow the admin to delete book.
+Inputs Admin is required to select delete book button after logging into the system
+in order to delete a book from its existing records.
+Processing The menu responds to selection by deleting the book from its records.
+Outputs The selected book would be deleted from the database.
+3.2.7 Functional requirements to Delete Journal
+Table 10 gives the functional requirements for Delete Journal option.
+Table 10: Functional Requirements for Delete Journal option
+Purpose The system shall allow the admin to delete journal.
+Inputs Admin is required to select delete journal option after logging into the
+system in order to delete a journal from its existing records.
+Processing The menu responds to selection by deleting the journal from its records.
+Outputs The selected journal would be deleted from the database.
+ 
+3.3 Performance Requirements
+            1.System login shall take less than 10 seconds.
+2.Searches shall return results within 10 seconds.
+3.Only textual information will be handled by the software.
+4.System shall support 1,000 simultaneous users.
+0.3 Logical Database Requirements
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 33 of 58
+3.5 Quality Attributes
+● Reliability : The system should be reliable .The average time to failure shall be 30
+days.
+● Availability : The system shall be available to users 24 hours a day, 7 days a week, with
+the exception of being down for maintenance no more than one hour a week.
+● Security : Users will be able to access only their own personal information and not that
+of other users.
+● Maintainability: Any updates or defect fixes shall be able to be made on server-side
+computers only without any patches required by the user.
+● Portability : Nothing required.
+ 3.6 Other Requirements
+None at this time
+4. Change History
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 34 of 58
+5.  Document Approver
+SRS for Book Spot approved by:
+(name)
+Designation
+Date:
+2.5 USER STORIES AND USER STORY CARD
+ 2.5.1 User story for student Login.#0001 STUDENT LOGIN
+As a registered user, I want to log in, so I can access books and journals.                                                                                                                                                                           
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 35 of 58
+CONFIRMATION
+1.Success-     a. Valid user logged in and is referred to next page.
+2.Failure- displays message:     a. “enter email address if not”     b.  “enter password if not”     c. “Invalid credentials”
+2.5.2 User story for Admin Login
+#0002 ADMIN LOGIN
+As an admin, I want to log in the system, so that I can manage books, Journals and users.
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 36 of 58
+CONFIRMATION
+1.Success-     a. Valid admin logged in and is referred to next page.
+2.Failure- displays message:a. “Invalid Credentials”b. “Enter email id (if not)”c. “enter password (if not)”
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 37 of 58
+2.5.3 User story to ADD USER#0003 ADD USER
+As an Admin, I want to add users, so I can give them the access to books and journals.
+CONFIRMATION
+1.SUCCESS-User successfully added to the system and can access the site.
+2.Failure- No updation in database, if admin tries to add user without entering its details.Display message-a. “error”
+2.5.4 USER STORY TO ADD BOOKS
+#0004 ADD BOOKSAs an Admin, I want to add books, so that I can provide additional resources to the user.
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 38 of 58
+CONFIRMATION1.Success-File uploaded successfully and can be accessed by both student and admin.
+2.Failure- If no file is chosen by the admin from the system and add book option is clicked thendisplays message:a.  “File not uploaded”
+2.5.5 USER STORY TO ADD JOURNALS
+#0005 ADD JOURNALS
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 39 of 58
+As an Admin, I want to add Journals, so that I can provide additional resources to user.
+CONFIRMATION1.Success-File uploaded successfully and can be accessed by both student and admin.
+2.Failure- If no file is chosen by the admin from the system and add journal option is clicked thendisplays message:a.  “File not uploaded”
+2.5.6 USER STORY TO VIEW BOOK
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 40 of 58
+#0006 VIEW BOOK
+As a student, I want to be able to view books, so I can download and read them offline conveniently
+CONFIRMATION-
+Success-Book viewed and downloaded successfully.
+Failure-Not enough storage to Download book.
+6. Design Phase (At least two significant cases of each diagram)
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 41 of 58
+6.1        Class Diagram
+6.2        Sequence Diagram
+    6.2.1 Sequence diagram to add book
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 42 of 58
+6.2.2 Sequence diagram to View Book
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 43 of 58
+6.2.3 Sequence diagram for login
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 44 of 58
+6.3 Collaboration Diagram
+     6.3.1 Collaboration diagram to add book
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 45 of 58
+   
+ 6.3.2 Collaboration Diagram to view Book and Journal.
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 46 of 58
+6.4          State Chart Diagrams
+   
+    6.4.1 State Chart Diagram for Unregistered user.
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 47 of 58
+ 
+  6.4.2 State Chart Diagram for books uploaded.
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 48 of 58
+3. Implementation
+3.4 Component Diagrams
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 49 of 58
+3.5 Deployment Diagrams        
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 50 of 58
+3.6 Screenshots
+Login page
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 51 of 58
+Admin Side
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 52 of 58
+ 
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 53 of 58
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 54 of 58
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 55 of 58
+User Side
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 56 of 58
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 57 of 58
+Database
+UCS503_Project_File(SE)
+NO, THANKS
+ GET THE APP
+Edit with the Docs app
+Make tweaks, leave comments and share with
+others to edit at the same time.
+https://docs.google.com/document/u/0/d/1NBtCYC5YjMuf8Nt-wjBYQF23EVuO1XhtBr3pj0JlEA8/mobilebasic 27/07/25, 10 :22 PM
+Page 58 of 58
+

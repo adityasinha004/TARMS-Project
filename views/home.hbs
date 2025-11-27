@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+	<style>
+		body {
+			background-image: url("https://th.bing.com/th/id/Rc7f8f0025f585bbf8abebfeae1a50cfe?rik=PVQ2choBn6BRQA&riu=http%3a%2f%2fimg.collegepravesh.com%2f2014%2f12%2fThapar-University.jpg&ehk=CCOy468fwERBONZm5Dhv%2fG8BdT6U5ansGCbgjFc4dEQ%3d&risl=&pid=ImgRaw");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+	</style>
+
+	<div class="support">
+		<p>Welcome {{name}}</p>
+		<a href="/home/contact?uid={{uid}}" class="link1">Contact Us</a>
+		<a href="/home/feedback?uid={{uid}}" class="link1">Feedback</a>
+		<br>
+		<!--<a href="#" class="link2">Sign Out</a>-->
+	</div>
+	<div class="promote">
+		<h1><b>Thapar ARMS<br>Auditorium and Room Management System</b></h1>
+		<div class="button-group">
+			<a href="/home/prediction?uid={{uid}}">View Prediction</a>
+			<a href="/home/personalDetails?uid={{uid}}">Personal Info</a>
+			<a href="/home/changeInfo?uid={{uid}}">Edit Info</a>
+			<a href="/home/my_request?uid={{uid}}">My Requests</a>
+			<a href="/home/ChangePassword?uid={{uid}}">Change Password</a>
+			<a href="/home/logout" target="_blank">Log Out</a>
+		</div>
+	</div>
+	<br>
+	<hr>
+	<div id="booking">
+		<!--<label>Select Date: <input type="date" id="myDate"></label>
+		<a class="fill" href="">Search</a>-->
+		<label>
+			<h2 style="text-align:left;">Booking for date: <span id=myDate></span></h2>
+		</label>
+		<br>
+		<table>
+			<tr>
+				<th>Room Number</th>
+				<th>Room Name</th>
+				<th>Status</th>
+				<th>Booking</th>
+			</tr>
+			{{#each Rooms}}
+			<tr>
+				<td>{{Room_Number}}</td>
+				<td>{{Room_Name}}</td>
+				<td>{{Status}}</td>
+				<td><a href="/home/RequestForm?id={{_id}}&uid={{../uid}}" id="{{Room_Number}}"
+						onmousedown=validate()>Book Now</a></td>
+				<script>
+					if ("{{Status}}" != "Available") {
+						let x = document.getElementById("{{Room_Number}}");
+						x.style.pointerEvents = "none";
+						x.style.backgroundColor = "rgb(200,200,200)";
+						x.style.color = "black";
+					}
+				</script>
+			</tr>
+			{{/each}}
+		</table>
+	</div>
+	<script src="/js/home.js"></script>
+</body>
+
+</html>
