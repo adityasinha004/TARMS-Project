@@ -8,7 +8,7 @@ mongoose.connect("mongodb://localhost:27017/test")
 
         // Default Faculty
         const faculty = {
-            fac_name: "Dr. Ashima Singh",
+            fac_name: "Faculty",
             position: "Professor",
             uname: "admin",
             mob: 9876543210,
@@ -19,19 +19,19 @@ mongoose.connect("mongodb://localhost:27017/test")
 
         // Default Student
         const student = {
-            Name: "Aditya Sinha",
-            UserID: "102003001",
+            Name: "Student",
+            UserID: "student",
             eMail: "student@thapar.edu",
             Member_type: "student",
             MobileNumber: 9876543211,
             DOB: new Date("2000-01-01"),
-            Password: "123"
+            Password: "student"
         };
 
         try {
             // Clear existing
             await Faculty.deleteMany({ uname: "admin" });
-            await User.deleteMany({ UserID: "102003001" });
+            await User.deleteMany({ UserID: "student" });
 
             // Create new
             await Faculty.create(faculty);
@@ -39,7 +39,7 @@ mongoose.connect("mongodb://localhost:27017/test")
 
             console.log("Users seeded successfully!");
             console.log("Faculty: admin / admin");
-            console.log("Student: student@thapar.edu / 123");
+            console.log("Student: student / student");
         } catch (err) {
             console.error("Error seeding users:", err);
         } finally {

@@ -308,7 +308,7 @@ routes.get("/home/RequestForm", Auth, async (req, res) => {
 
 //prediction feature for faculty
 routes.get("/faculty/prediction", Auth, (req, res) => {
-    exec("./venv/bin/python predict_usage.py", (error, stdout, stderr) => {
+    exec("./venv/bin/python src/predict_usage.py", (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
@@ -336,7 +336,7 @@ routes.get("/faculty/prediction", Auth, (req, res) => {
 
 //prediction feature for students
 routes.get("/home/prediction", Auth, (req, res) => {
-    exec("./venv/bin/python predict_usage.py", (error, stdout, stderr) => {
+    exec("./venv/bin/python src/predict_usage.py", (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
